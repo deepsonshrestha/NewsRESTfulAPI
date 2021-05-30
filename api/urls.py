@@ -21,5 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.NewsListView.as_view()),
     path('<int:pk>/',views.NewsDetailView.as_view()),
-    path('api_auth',include('rest_framework.urls')),
+    path('api_auth/',include('rest_framework.urls')),
+    path('dj-rest-auth/',include('dj_rest_auth.urls')),
+    path('dj-rest-auth/registration/',include('dj_rest_auth.registration.urls')),
 ]

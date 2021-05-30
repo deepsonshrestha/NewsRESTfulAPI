@@ -6,10 +6,11 @@ from .permissions import IsAuthorOrNot
 # Create your views here.
 
 class NewsListView(generics.ListCreateAPIView):
+
     queryset = NewsModel.objects.all()
     serializer_class = NewsSerializer
 
 class NewsDetailView(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = [permissions.IsAuthenticated & IsAuthorOrNot]
+
     queryset = NewsModel.objects.all()
     serializer_class = NewsSerializer
